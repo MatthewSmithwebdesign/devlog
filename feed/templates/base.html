@@ -3,42 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title%}{% endblock %}</title>
-</head>
-<body>
-<!-- style -->
-<style>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+   <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
-</style>
+    <title>{% block title%}{% endblock %}</title>
+
+</head>
+
+<body>
+
+   <!-- Nav Bar-->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}"><img id="logo" src="{% static 'img/mwswdblue-sm.jpg' %}"></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item text-black">
+                        <a class="nav-link text-black font-weight-bold" href="https://www.instagram.com/matthew_webdev/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="nav-item text-black">
+                        <a class="nav-link text-black font-weight-bold"  href="https://twitter.com/matthew_webdev"><i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item text-black">
+                        <a class="nav-link text-black font-weight-bold" href="https://github.com/MatthewSmithwebdesign"><i class="fa fa-github" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="nav-item text-black">
+                        <a class="nav-link text-black font-weight-bold" href="https://www.linkedin.com/in/matthewsmithwebdesign/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 
-    <!-- Navigation -->
 
-
-<style>
-        
-       
-</style>
-
-
-
-<!-- Nav Bar-->
-<nav>
-
-
-</nav>
-
-<!-- Side Bar -->
-
-{% block sidebar %}
-
-
-{% endblock %}
    
 <!-- Blog Content -->
-    {%block body %}
+    {% block content %}
     <!--- Content Here --->
-    {% endblock %}
+    {% endblock content %}
 
     <!-- Footer Content -->
 
@@ -46,5 +65,5 @@
         <!-- footer items-->
         <p class="m-0 text-dark text-center ">Copyright &copy; <a href="http://MatthewSmithWebDesign.com">Matthew Smith</p></a>
     </footer>
-</body>
+  </body>
 </html>
