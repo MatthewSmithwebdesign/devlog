@@ -17,6 +17,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 TEMPLATES_DIRS = os.path.join(BASE_DIR,'templates')
 
+# Base url to serve media files
+MEDIA_URL = '/media/'
+
+# Path where media is stored
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -120,3 +126,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+# Static files dir
+
+STATICFILES_DIRS = STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+# Static Root path
+STATIC_ROOT  = os.path.join(BASE_DIR, 'staticfiles')

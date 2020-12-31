@@ -1,0 +1,26 @@
+  {% load static %} 
+  
+  <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+  
+  <!-- Side Bar Style -->
+
+
+
+{% block sidebar %} 
+
+<!-- Sidebar  -->
+<div class="col-md-4 float-right ">
+   <div class="card my-4">
+     <h5 class="card-header">Learn about me</h5>
+      <div class="card-body">
+        <p class="card-text"> Hello My name is Matthew Smith. I spent 23 years as a chef and I started to learn to code in my Late 30's.
+            Below you can find a link to my Portfolio site.
+        </p>
+          <a href="http://matthewsmithwebdesign.com"
+           class="btn btn-port">My Portfolio Site</a>
+           <a href='https://ko-fi.com/D1D732RX8' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+       </div>
+    </div>
+</div>
+
+{% endblock sidebar %}
