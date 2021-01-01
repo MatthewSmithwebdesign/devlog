@@ -132,3 +132,6 @@ dmypy.json
 
 #.vscode folder
 .vscode
+
+#static files
+staticfiles

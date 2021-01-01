@@ -1,16 +1,6 @@
 from django.contrib import admin
-from .models import BlogPost
 from comment.models import Comment
-
 # Register your models here.
-
-
-class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'status','created_on')
-    list_filter = ("status",)
-    search_fields = ['title', 'content']
-    prepopulated_fields = {'slug': ('title',)}
-
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'body', 'post', 'created_on', 'active')
     list_filter = ('active', 'created_on')
@@ -19,5 +9,6 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comments(self, request, queryset):
         queryset.update(active=True)
-  
-admin.site.register(BlogPost,PostAdmin)
+
+
+admin.site.register(Comment,CommentAdmin)
