@@ -1,5 +1,5 @@
 from django.db import models
-#from feed.models import BlogPost
+
 
 # Create your models here.
 class Comment(models.Model):

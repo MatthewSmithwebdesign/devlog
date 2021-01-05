@@ -3,11 +3,11 @@ from .forms import CommentForm
 from django.shortcuts import render, get_object_or_404
 # Create your views here.
 
-class post_detail(request, slug):
+class PostDetail(DetailView):
     template_name = 'post_detail.html'
-    post = get_object_or_404(BlogPost, slog=slug)
+    post = get_object_or_404(BlogPost, slug=slug)
     comments = post.comments.filter(active=True)
-    new_COMMENT = None
+  # new_COMMENT = None
     #Posted Comment
     if request.method == 'POST':
         comment_form = CommentForm(data=requested.POST)
