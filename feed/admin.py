@@ -13,5 +13,4 @@ class PostAdmin(admin.ModelAdmin):
 
 
   
-admin.site.register(BlogPost,PostAdmin)
-admin.site.register(Comment,CommentAdmin)
+admin.site.register(BlogPost, PostAdmin)

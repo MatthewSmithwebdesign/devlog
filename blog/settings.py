@@ -34,6 +34,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#Bootstrap for crispyforms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 # Application definition
 
@@ -46,6 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'feed',
     'comment',
+    'crispy_forms',
+    'taggit',
 ]
 
 MIDDLEWARE = [
