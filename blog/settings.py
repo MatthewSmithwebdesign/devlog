@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'feed',
     'comment',
     'crispy_forms',
-    'taggit',
+    
 ]
 
 MIDDLEWARE = [
