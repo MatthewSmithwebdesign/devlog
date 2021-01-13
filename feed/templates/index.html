@@ -1,5 +1,6 @@
 {% extends "base.html" %} {% load static %}
 {% static 'css/main.css' %}
+
 {% block content %}
 
 
@@ -21,7 +22,7 @@
     <div class="row">
         <!-- Blog Post Columns -->
         <div class="col-md-8 mt-3 left">
-            {% for post in post_list %}
+            {% for post in blogpost_list %}
             <div class="card mb-4">
                 <div class="card-body">
                     <h2 class="card-title">{{ post.title }}</h2>
@@ -33,6 +34,12 @@
             {% endfor %}
         </div>
         {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+    <!-- advert-->
+    {% if advert %}
+    {{ image }}
+    {{ advert_url}}
+    {% else %}
+    {% endif %}
     </div>
 </div>
 {%endblock%}
