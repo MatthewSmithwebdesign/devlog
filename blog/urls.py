@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
     path('', include('feed.urls')),
-   # path('<slug:slug>/', views.post_detail, name='post_detail')
-
+    #path('<slug:slug>/', views.post_detail, name='post_detail')
+   # path('', inculde ('advert.urls')),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

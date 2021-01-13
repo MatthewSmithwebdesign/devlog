@@ -34,6 +34,12 @@
             {% endfor %}
         </div>
         {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+    <!-- advert-->
+    {% if advert %}
+    {{ image }}
+    {{ adver_url}}
+    {% else %}
+    {% end if %}
     </div>
 </div>
 {%endblock%}
