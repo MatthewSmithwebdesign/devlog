@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.views import generic
+from advert.models import Advert
 from .models import BlogPost
 from comment.forms import CommentForm
+
 
 # Create your views here.
 
@@ -16,4 +18,5 @@ class PostDetail(generic.DetailView):
     def get_context_data(self, **kwargs):
        context = super().get_context_data(**kwargs)
        context['form'] = CommentForm()
+       context['advert'] = Advert()
        return context 
