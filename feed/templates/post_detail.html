@@ -57,5 +57,12 @@
     </div>
   </div>
 </div>
-
+<div>
+   <!-- advert-->
+   {% if advert %}
+   {{ advert.url}}
+   {{ advert.image.url }}
+   {% else %}
+   {% endif %}
+</div>
 {% endblock content %}
