@@ -36,8 +36,8 @@
         {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
     <!-- advert-->
     {% if advert %}
-    {{ image }}
-    {{ advert_url}}
+    {{ advert.url}}
+    {{ advert.image.url }}
     {% else %}
     {% endif %}
     </div>

@@ -18,5 +18,5 @@ class PostDetail(generic.DetailView):
     def get_context_data(self, **kwargs):
        context = super().get_context_data(**kwargs)
        context['form'] = CommentForm()
-       context['advert'] = Advert()
+       context['advert'] = Advert.objects.first()
        return context 
