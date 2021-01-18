@@ -171,7 +171,7 @@ ACCOUNT_USERNAME_REQUIRED =True
 ACCOUNT_USERNAME_VALIDATORS = None
 
 #Account adapters
-ACCOUNT_ADAPTER = 'allauthdemo.adapter.CustomProcessAdapter'
+#ACCOUNT_ADAPTER = 'allauth.adapter.CustomProcessAdapter'
 
 #Account Signup
-ACCOUNT_FORMS = {'signup': 'allauthdemo.forms.SignupForm',}
+#ACCOUNT_FORMS = {'signup': 'allauth.forms.SignupForm',}
