@@ -6,3 +6,8 @@ cd dev
 python3 -m venv dev
 # To activate the environment.
 source dev/bin/activate
+# added packages
+pillow
+allauth
+sorl
+crispy forms

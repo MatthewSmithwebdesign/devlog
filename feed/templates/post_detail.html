@@ -2,6 +2,7 @@
 {% extends 'base.html' %} 
 {% block content %}
 {% load crispy_forms_tags %}
+{% load thumbnail %}
 
 <div class="container">
   <div class="row">
@@ -46,7 +47,7 @@
         </div>
         {% else %}
         <h3>Leave a comment</h3>
-        <form method="post" style="margin-top: 1.3em;">
+        <form id="yourform" method="post" style="margin-top: 1.3em;">
           {{ comment_form | crispy }}
           {{ form.as_p }}
           {% csrf_token %}
@@ -57,12 +58,14 @@
     </div>
   </div>
 </div>
-<div>
+<div id="advert" class="">
    <!-- advert-->
    {% if advert %}
-   {{ advert.url}}
-   {{ advert.image.url }}
-   {% else %}
+   {% thumbnail advert.image "100x100" crop="center" as im %}
+     <a href= "{{ advert.advert_url }}"class="ad">
+       {{ advert.title }}
+     <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a> 
+   {% endthumbnail %}
    {% endif %}
 </div>
 {% endblock content %}
