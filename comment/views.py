@@ -15,7 +15,7 @@ class PostDetail(DetailView):
         comments = post.comments.filter(active=True)
         #post = get_object_or_404(BlogPost, slug=slug)
         #print(kwargs)
-         new_COMMENT = None
+         #new_COMMENT = None
         # Posted Comment
         if request.method == "POST":
             comment_form = CommentForm(data=request.POST)

@@ -4,6 +4,7 @@ from django.views import generic
 from advert.models import Advert
 from .models import BlogPost
 from comment.forms import CommentForm
+from membership.models import Membership, UserMembership, Subscription
 
 
 # Create your views here.
@@ -20,3 +21,9 @@ class PostDetail(generic.DetailView):
        context['form'] = CommentForm()
        context['advert'] = Advert.objects.first()
        return context 
+    def dispatch(self, request, *args, **kwargs):
+     blog_post = get_object()  
+    if request.user.is_anonymous and blog_post.membership_status == "pre": self.user.username
+        return redirect('/accounts/login/')  
+        return super().dispatch(request, *args, **kwargs)
+      
