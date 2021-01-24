@@ -16,5 +16,4 @@ class MembershipView(ListView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
         current_membership = self.get_user_membership(self.request)
-        context['current_membership'] = str(current_membership.membership)
         return context

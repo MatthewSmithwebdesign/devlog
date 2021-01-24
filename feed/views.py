@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from django.views import generic
 from advert.models import Advert
@@ -22,8 +22,10 @@ class PostDetail(generic.DetailView):
        context['advert'] = Advert.objects.first()
        return context 
     def dispatch(self, request, *args, **kwargs):
-     blog_post = get_object()  
-    if request.user.is_anonymous and blog_post.membership_status == "pre": self.user.username
-        return redirect('/accounts/login/')  
-        return super().dispatch(request, *args, **kwargs)
+          if request.user.is_anonymous:
+            return redirect('/accounts/login/')
+          else:
+            return super().dispatch(request, *args, **kwargs)
+                    
       
+                    
