@@ -22,9 +22,9 @@ class PostDetail(generic.DetailView):
        context['advert'] = Advert.objects.first()
        return context 
     def dispatch(self, request, *args, **kwargs):
-          if request.user.is_anonymous:
+        if request.user.is_anonymous:
             return redirect('/accounts/login/')
-          else:
+        else:
             return super().dispatch(request, *args, **kwargs)
                     
       

@@ -8,7 +8,7 @@ from membership.models import Membership, UserMembership, Subscription
 class MembershipView(ListView):
     model = Membership
     template_name = 'memberships/list.html'
-    def get_user_membership(self):
+    def get_user_membership(self, request):
         user_membership_qs = UserMembership.objects.filter(user=self.request.user)
         if user_membership_qs.exists():
             return user_membership_qs.first()
