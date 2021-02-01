@@ -7,15 +7,13 @@ from .forms import CommentForm
 
 
 class PostDetail(DetailView):
-   
-
     def post(self, request, *args, **kwargs):
         template_name = "post_detail.html"
-        http_method_names = ["get", "post"] 
+        http_method_names = ["get", "post"]
         comments = post.comments.filter(active=True)
-        #post = get_object_or_404(BlogPost, slug=slug)
-        #print(kwargs)
-         new_COMMENT = None
+        # post = get_object_or_404(BlogPost, slug=slug)
+       
+        # new_COMMENT = None
         # Posted Comment
         if request.method == "POST":
             comment_form = CommentForm(data=request.POST)
