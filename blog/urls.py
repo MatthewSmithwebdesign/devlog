@@ -18,18 +18,22 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import url, include
+from django.contrib.sitemaps.views import sitemap
+from blog.sitemaps import BlogPostSitemap
 from feed import views
 from comment import views
 from membership import views
 
-
-
+sitemaps = {
+    'posts':BlogPostSitemap
+}
 
 urlpatterns = [
+    url(r"^sitemap\.xml/$", sitemap, {"sitemaps": sitemaps}, name="sitemap"),
     path("admin/", admin.site.urls),
     path("", include("feed.urls")),
-    #path("<slug:slug>/", views.post_detail, name="post_detail"),
-    #path("", inculde("advert.urls")),
+    # path("<slug:slug>/", views.post_detail, name="post_detail"),
+    # path("", inculde("advert.urls")),
     url(r"^accounts/", include("allauth.urls")),
     path("membership/", views.MembershipView.as_view(), name="select"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
