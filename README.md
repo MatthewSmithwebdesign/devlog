@@ -4,7 +4,7 @@
 cd dev
 # to enter the virtual environment  execute the following command.
 pipenv shell
-# To active the server
+# To activate the server
 python3 manage.py runserver
 # added packages
 pillow
