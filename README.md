@@ -3,9 +3,9 @@
 # change directory to the dev diretory.
 cd dev
 # to enter the virtual environment  execute the following command.
-python3 -m venv dev
-# To activate the environment.
-source dev/bin/activate
+pipenv shell
+# To active the server
+python3 manage.py runserver
 # added packages
 pillow
 allauth
