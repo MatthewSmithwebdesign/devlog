@@ -24,6 +24,8 @@ from feed import views
 from comment import views
 from membership import views
 
+from django.views.static import serve
+from django.conf.urls import url
 sitemaps = {
     'posts':BlogPostSitemap
 }
@@ -36,4 +38,6 @@ urlpatterns = [
     # path("", inculde("advert.urls")),
     url(r"^accounts/", include("allauth.urls")),
     path("membership/", views.MembershipView.as_view(), name="select"),
+    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
