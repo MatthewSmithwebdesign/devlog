@@ -47,7 +47,7 @@
         </div>
         {% else %}
         <h3>Leave a comment</h3>
-        <form id="yourform" method="post" style="margin-top: 1.3em;">
+        <form id="yourform" method="POST" style="margin-top: 1.3em;">
           {{ comment_form | crispy }}
           {{ form.as_p }}
           {% csrf_token %}
